@@ -8,7 +8,7 @@ const UserListPage = () => {
   useEffect(() => {
     async function getAllUsers() {
       try {
-        const { data } = await axios.get("https://dummyjson.com/users");
+        const { data } = await axios.get("/users");
         console.log(data.users);
         setUsers(data.users);
       } catch (error) {
