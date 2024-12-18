@@ -43,8 +43,9 @@ const AddUserPage = () => {
       setAge(0);
       setFirstName("");
       setLastName("");
+      nav("/");
     } catch (error) {
-      console.log(error);
+      console.log("error error error!", error);
     }
 
     //**************************** */
@@ -70,7 +71,6 @@ const AddUserPage = () => {
     // }
 
     //navigate to the homepage after you create the user
-    nav("/");
   };
 
   return (
