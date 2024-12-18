@@ -35,7 +35,7 @@ const AddUserPage = () => {
       console.log("where we are going", API_URL);
       const response = await fetch(`${API_URL}/auth/signup`, {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        // headers: { "Content-Type": "application/json" },
         body: JSON.stringify(newUser),
       });
       const data = await response.json();
