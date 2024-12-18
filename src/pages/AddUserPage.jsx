@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { API_URL } from "../config/apiUrl.config";
 
 const AddUserPage = () => {
   const [firstName, setFirstName] = useState("");
@@ -32,13 +33,14 @@ const AddUserPage = () => {
     //   .catch((err) => console.log(err));
     //POST request with fetch and async and await
     try {
-      const response = await fetch("https://dummyjson.com/users/add", {
+      console.log("where we are going", API_URL);
+      const response = await fetch(`${API_URL}/auth/signup`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(newUser),
       });
       const data = await response.json();
-      console.log(data);
+      console.log("here is the data", data);
       setAge(0);
       setFirstName("");
       setLastName("");
@@ -48,12 +50,12 @@ const AddUserPage = () => {
 
     //**************************** */
     //POST request with axios and .then and .catch
-    axios
-      .post("https://dummyjson.com/users/add", newUser)
-      .then(({ data }) => {
-        console.log(data);
-      })
-      .catch((err) => console.log(err));
+    // axios
+    //   .post("https://dummyjson.com/users/add", newUser)
+    //   .then(({ data }) => {
+    //     console.log(data);
+    //   })
+    //   .catch((err) => console.log(err));
     //POST request with axios and async and await
     // try {
     //   const { data } = await axios.post(

@@ -9,12 +9,13 @@ import MyOutlet from "./components/MyOutlet";
 import Spinner from "react-bootstrap/Spinner";
 import axios from "axios";
 import { ThemeContext } from "./contexts/ThemeContext";
+import { API_URL } from "./config/apiUrl.config";
 
 function App() {
   const [loading, setLoading] = useState(true);
   const [image, setImage] = useState();
   const { darkTheme, setDarkTheme } = useContext(ThemeContext);
-
+  console.log("here is the API url", API_URL);
   useEffect(() => {
     setTimeout(() => {
       setLoading(false);
